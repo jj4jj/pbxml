@@ -1,0 +1,17 @@
+
+package test;
+
+message SubConf {
+    optional int32  id = 1[default=1];
+    optional int32  value = 2[default=2];
+    optional string desc = 3[default="desc sub"];
+
+};
+
+message Config {
+
+    optional    string  name = 1[default="string value"];
+    optional    string  desc = 2[default="string value"];
+    optional    string  version = 3[default="string value"];
+    repeated    SubConf     scs = 4;
+};
