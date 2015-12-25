@@ -9,6 +9,7 @@ test.pb.cc: test.proto
 	protoc test.proto --cpp_out=./
 
 ${LIB}: ./pbxml.o ./xml_doc.o ./dcpots/lib/*.o
+	mkdir -p dcpots/lib
 	cd dcpots/lib && g++ -c ../base/*.cpp --std=c++11 -I../base
 	g++ -c -std=c++11 ./xml_doc.cpp
 	g++ -c -std=c++11 ./pbxml.cpp -I./dcpots/base
